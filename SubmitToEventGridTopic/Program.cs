@@ -60,15 +60,19 @@ namespace SubmitToEventGridTopic
 
             for (int i = 0; i < loopCount; i++)
             {
+                
 
                 new EventGridObject(gridTopicEndpoint, sasKey, subject, eventType)
                 {
+
+                    
+
                     Data = new
                     {
-                        orderid = "abc123",
+                        orderid = $"abc{i+1}",
                         itemid = 123,
                         itemdesc = "Fluffy Bunny",
-                        quantity = 3,
+                        quantity = i+1,
                         itemprice = 9.99,
                         extendedprice = 29.97,
                         customerid = Guid.NewGuid(),
